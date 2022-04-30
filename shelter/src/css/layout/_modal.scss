@@ -14,7 +14,7 @@
 
 .modal_window {
   width: 900px;
-  height: 500px;
+  height: auto;
   display: flex;
   flex-direction: row;
   z-index: 1001;
@@ -27,11 +27,11 @@
 
   @include media-tablet {
     width: 630px;
-    height: 350px;
+    //  height: 350px;
   }
   @include media-mobile {
     width: 240px;
-    height: 341px;
+    //  height: 341px;
   }
 
   .modal_image {
@@ -58,12 +58,12 @@
     @include media-tablet {
       width: 280px;
       padding: 10px 9px 37px 11px;
-      gap: 2%;
+      //    gap: 2%;
     }
     @include media-mobile {
       width: 100%;
       padding: 10px;
-      gap: 2%;
+      //   gap: 2%;
     }
 
     h3 {
@@ -76,10 +76,10 @@
       color: #000000;
       margin-bottom: 10px;
       @include media-tablet {
-        margin-bottom: 0;
+        //       margin-bottom: 0;
       }
       @include media-mobile {
-        margin-bottom: 0;
+        //     margin-bottom: 0;
         align-self: center;
       }
     }
@@ -109,12 +109,12 @@
       color: #000000;
 
       @include media-tablet {
-        margin-top: 0;
-        margin-bottom: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
       }
       @include media-mobile {
-        margin-top: 0;
-        margin-bottom: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
         font-size: 13px;
         align-self: center;
         text-align: justify;
@@ -162,6 +162,14 @@
   background-color: transparent;
   box-sizing: border-box;
   border-radius: 100px;
+
+  @include media-tablet {
+    margin-right: -45px;
+  }
+
+  @include media-mobile {
+    margin-right: -38px;
+  }
 }
 
 .modal_close:hover {

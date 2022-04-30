@@ -10,8 +10,9 @@
 }
 
 .burgermenu {
-  position: fixed;
+  position: absolute;
   top: 0;
+  //margin-right: -320px;
   right: -320px;
   //  z-index: 1100;
   width: 320px;
@@ -20,6 +21,10 @@
   transition: 2s;
 
   background: $back_gradient_burger;
+
+  // ::-webkit-scrollbar {
+  //   right: -312px;
+  // }
 
   // display: flex;
   // flex-direction: column;

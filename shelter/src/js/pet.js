@@ -21,10 +21,10 @@ firstBtn.style.cursor = `default`;
 
 for (let navlink of navlinks) {
   //   console.log(navlink.getAttribute("data-disabled"));
-  if (navlink.getAttribute("data-disabled") == "false") {
-    navlink.addEventListener("mouseover", () => setHover(navlink));
-    navlink.addEventListener("mouseleave", () => removeHover(navlink));
-  } else if (navlink.getAttribute("data-disabled") == "true") {
+  //  if (navlink.getAttribute("data-disabled") == "false") {
+  navlink.addEventListener("mouseover", () => setHover(navlink));
+  navlink.addEventListener("mouseleave", () => removeHover(navlink));
+  if (navlink.getAttribute("data-disabled") == "true") {
     disableBtn(navlink);
   }
 }
@@ -203,9 +203,9 @@ function display(pageNumber) {
       `<div class="pet" data-name="${
         petsJS[resultFin[pageNumber - 1][i]]
       }"><div class="img_pet">
-    <img src="../../assets/images/pets-${
-      petsJS[resultFin[pageNumber - 1][i]]
-    }.png" /></div>
+    <img src="../../assets/images/pets-${petsJS[
+      resultFin[pageNumber - 1][i]
+    ].toLowerCase()}.png" /></div>
     <div class="name">${petsJS[resultFin[pageNumber - 1][i]]}</div>
     <div class="buttonw buttonw1">Learn more</div></div>`
     );
@@ -278,7 +278,7 @@ document.addEventListener("click", (e) => {
 
           modal.innerHTML = `<div class="modal_window">
           <div class = "modal_image_wrap">
-            <img src="${elem.img}" alt="" class="modal_image" />
+            <img src="${elem.img.toLowerCase()}" alt="" class="modal_image" />
           </div>
           <div class = "modal_text_wrap">
             <h3>${elem.name}</h3>
@@ -291,7 +291,7 @@ document.addEventListener("click", (e) => {
             <li><strong>Parasites: </strong>${elem.parasites}</li>
             </ul>  
           </div>    
-          <button class="modal_close" id="button"><img src="../../assets/images/vector.png" /></button> 
+          <button class="modal_close" id="button"><img src="../../assets/images/Vector.png" /></button> 
           </div>`;
 
           document.body.append(modal);
@@ -391,8 +391,8 @@ burger.onclick = function (event) {
   </nav>
   </div>`;
 
-  document.body.append(burgerMenuWrap);
   document.body.style.overflow = "hidden";
+  document.body.append(burgerMenuWrap);
 
   burgerMenu = document.querySelector(".burgermenu");
   setTimeout(

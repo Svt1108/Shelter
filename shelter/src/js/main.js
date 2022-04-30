@@ -62,8 +62,8 @@ const cardsCount = petsJS.length;
 let result = [];
 let arr = [];
 
-const RightBtn = document.querySelector(".right-button");
-const LeftBtn = document.querySelector(".left-button");
+const LeftBtn = document.querySelector(".right-button");
+const RightBtn = document.querySelector(".left-button");
 const sidebar = document.querySelector(".cardsWrapper");
 let number;
 
@@ -203,7 +203,9 @@ function displaySlides() {
     sidebarInside.insertAdjacentHTML(
       `beforeend`,
       `<div class="pet" data-name="${petsJS[result[i]]}"><div class="img_pet">
-      <img src="../../assets/images/pets-${petsJS[result[i]]}.png" /></div>
+      <img src="../../assets/images/pets-${petsJS[
+        result[i]
+      ].toLowerCase()}.png" /></div>
       <div class="name">${petsJS[result[i]]}</div>
       <div class="buttonw buttonw1">Learn more</div></div>`
     );
@@ -243,7 +245,7 @@ document.addEventListener("click", (e) => {
 
           modal.innerHTML = `<div class="modal_window">
           <div class = "modal_image_wrap">
-            <img src="${elem.img}" alt="" class="modal_image" />
+            <img src="${elem.img.toLowerCase()}" alt="" class="modal_image" />
           </div>
           <div class = "modal_text_wrap">
             <h3>${elem.name}</h3>
@@ -256,7 +258,7 @@ document.addEventListener("click", (e) => {
             <li><strong>Parasites: </strong>${elem.parasites}</li>
             </ul>  
           </div>    
-          <button class="modal_close" id="button"><img src="../../assets/images/vector.png" /></button> 
+          <button class="modal_close" id="button"><img src="../../assets/images/Vector.png" /></button> 
           </div>`;
 
           //         console.log(modal);
@@ -353,8 +355,8 @@ burger.onclick = function (event) {
   </nav>
   </div>`;
 
-  document.body.append(burgerMenuWrap);
   document.body.style.overflow = "hidden";
+  document.body.append(burgerMenuWrap);
 
   burgerMenu = document.querySelector(".burgermenu");
   setTimeout(
